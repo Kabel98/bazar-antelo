@@ -1,0 +1,34 @@
+.navbar-principal {
+    background-color: rgb(125, 96, 114);
+    height: 50px;
+    width: 100%;
+    border-bottom: 2px solid #83B799;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color:rgb(242, 228, 199);
+    font-weight: bold;
+    float: center;
+  }
+
+  .navbar-light .navbar-nav .nav-link.active {
+    color:rgb(247, 185, 124);
+    font-weight: bold;
+    float: center;
+  }
+
+.navbar-light .navbar-brand {
+    color: rgb(242, 129, 121);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    float: left;
+}
+
+.btn-outline-success {
+    color: #83B799;
+    border-color: #83B799;
+}
+
+.btn{
+    float:right;
+}
