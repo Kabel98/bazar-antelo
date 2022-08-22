@@ -5,6 +5,16 @@
     border-bottom: 2px solid #83B799;
 }
 
+.navbar{
+  position: fixed top;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.a .navbar-brand{
+float: left;
+}
+
 .navbar-light .navbar-nav .nav-link {
     color:rgb(242, 228, 199);
     font-weight: bold;
@@ -29,6 +39,6 @@
     border-color: #83B799;
 }
 
-.btn{
-    float:right;
+.btn.float-left {
+float: right;
 }
