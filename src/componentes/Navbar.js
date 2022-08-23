@@ -22,7 +22,7 @@ function NavBar(){
                         </Navbar.Collapse>
                         <Button href="#ingresar" variant="outline-success">Ingresar</Button>
                 </Container>
-                <a href="#none" className="px-5"><CartWidget/></a>
+                <a href="#cart" className='px-5'><CartWidget/></a>
             </Navbar>
         </div>    
     )
