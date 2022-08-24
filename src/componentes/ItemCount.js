@@ -17,7 +17,7 @@ export const Contador = ({stock, inicial, agregarProducto})=>{
 
     return(
         <div>
-            <p>Numero de clics {contador}</p>
+            <p>Numero de productos seleccionados {contador}</p>
             <button onClick={sumar}>+</button>
             <button onClick={(()=>agregarProducto(contador))} disabled={contador == stock ? true : false}>Agregar al carrito</button>
             <button onClick={restar}>-</button>
