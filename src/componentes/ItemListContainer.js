@@ -6,17 +6,17 @@ import {useState} from 'react';
 function ItemListContainer(props){
     const greeting = props.greeting;
 
-    const[numeroProductos, setNumeroProductos] = useState(0 ); 
+    const[numeroProductos, setNumeroProductos] = useState(0); 
 
     const agregar = (producto)=>{
-        console.log('funcion agregar', producto)
+        console.log('funcion onAdd', producto)
         setNumeroProductos(producto);
     }
    
     return(
          <div style={{margin: '10px', color: '#83B799'}}>
             <p>{greeting}</p>
-            <Contador stock={10} inicial={1} agregarProducto={agregar}></Contador>
+            <Contador stock={6} inicial={1} onAdd={agregar}></Contador>
         </div>
     )
 }

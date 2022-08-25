@@ -1,6 +1,7 @@
 import {useState} from 'react';
 
-export const Contador = ({stock, inicial, agregarProducto})=>{
+export const Contador = ({stock, inicial, onAdd})=>{
+    inicial = stock > 0 ? 1 : 0
     const [contador, setContador] = useState(inicial);
 
     const sumar =()=>{
@@ -19,7 +20,7 @@ export const Contador = ({stock, inicial, agregarProducto})=>{
         <div>
             <p>Numero de productos seleccionados {contador}</p>
             <button onClick={sumar}>+</button>
-            <button onClick={(()=>agregarProducto(contador))} disabled={contador == stock ? true : false}>Agregar al carrito</button>
+            <button onClick={(()=>onAdd(contador))} disabled={contador > stock || contador == 0}>Agregar al carrito</button>
             <button onClick={restar}>-</button>
          </div>
     )

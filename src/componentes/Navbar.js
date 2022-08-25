@@ -12,7 +12,7 @@ function NavBar(){
         <div>
             <Navbar className= "navbar-principal">
                 <Container>
-                    <Navbar.Brand href="#home" class="navbar-brand px-5" >Bazar Antelo</Navbar.Brand>
+                    <Navbar.Brand href="#home" className="navbar-brand px-5" >Bazar Antelo</Navbar.Brand>
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="nav-link">
                                 <Nav.Link href="#hogar">Hogar</Nav.Link>
