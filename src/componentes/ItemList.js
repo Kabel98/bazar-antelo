@@ -55,7 +55,7 @@ export const ItemList = () => {
 
     return(
         <div className="listContainer">
-            <p>Hola</p>
+            <p>Productos disponibles</p>
             <div className= 'itemContainer'>
                 {
                     Items.map((item)=>{
