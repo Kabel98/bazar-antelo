@@ -51,7 +51,37 @@
 .item{
   background: wheat;
   border: 1px solid black;
-  height: 120px;
+  display:inline-table;
+}
+
+.button {
+  background: #eb5a55;
+    border: 1px solid #d8b0af;
+    border-radius: 6px;
+    box-shadow: rgb(0 0 0 / 10%) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.button:hover{
+  box-shadow: 0 0 2em rgba(0,0,0,0.1), inset 0 0 1em rgba(0,0,0,0.1);
+  background-color: #bb6a6a;
 }
 
 @keyframes App-logo-spin {
