@@ -3,6 +3,9 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from './componentes/Navbar';
 import ItemListContainer from './componentes/ItemListContainer';
+import fotoAlfombra from './imagenes/fotoAlfombra.jpg';
+import fotoEquipo from './imagenes/fotoEquipo.webp';
+import fotoMaceta from './imagenes/fotoMaceta.webp';
 
 function App() {
   return (

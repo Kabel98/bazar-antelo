@@ -28,6 +28,26 @@
   color: #61dafb;
 }
 
+.listContainer{
+  background: pink;
+  padding: 10px;
+  width: 60%;
+}
+
+.itemContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 10px;
+}
+
+.itemImg{
+  width: 50px;
+  border-radius: 50%;
+  background-color: blue;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
