@@ -29,7 +29,7 @@
 }
 
 .listContainer{
-  background: pink;
+  background: rgb(59, 42, 45);
   padding: 10px;
   width: 60%;
 }
@@ -43,13 +43,14 @@
 }
 
 .itemImg{
-  width: 50px;
-  border-radius: 50%;
-  background-color: blue;
+  width: 200px;
+  height: 180px;
+  border-radius: 30%;
+  background-color: rgb(154, 154, 194);
 }
 
 .item{
-  background: wheat;
+  background: rgb(125, 96, 114);
   border: 1px solid black;
   display:inline-table;
 }
