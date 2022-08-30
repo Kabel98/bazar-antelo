@@ -2,7 +2,9 @@ import React from "react";
 import { useState, useEffect} from "react";
 import { Item }  from './Item.js';
 import asyncGetData from "../helpers/help";
-
+import fotoAlfombra from '../imagenes/fotoAlfombra.jpg';
+import fotoEquipo from '../imagenes/fotoEquipo.webp';
+import fotoMaceta from '../imagenes/fotoMaceta.webp';
 
 
 const Items = [
@@ -10,30 +12,30 @@ const Items = [
         id: 0,
         title: 'Alfombra',
         price: '$500',
-        imagen: "./fotoAlfombra.jpg"
+        imagen: fotoAlfombra
     },
     {
         id: 1,
         title: 'Equipo de musica',
         price: '$2000',
-        imagen: "./fotoEquipo.webp"
+        imagen: fotoEquipo
     },
     {
         id: 2,
         title: 'Maceta',
         price: '$250',
-        imagen: "./fotoMaceta.webp"
+        imagen: fotoMaceta
     }
 ]
 
 export const ItemList = () => {
-    const [Items,setItems] = useState([])
+    const [items,setItems] = useState([])
 
     const obtenerItems = ()=>{
         return new Promise((resolve, reject)=>{
             setTimeout(() => {
                 resolve(Items)
-            }, 3000);
+            }, 2000);
         })
 
     }
@@ -53,6 +55,7 @@ export const ItemList = () => {
 
     return(
         <div className="listContainer">
+            <p>Hola</p>
             <div className= 'itemContainer'>
                 {
                     Items.map((item)=>{
