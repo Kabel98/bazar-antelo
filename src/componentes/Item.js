@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import { Contador } from './ItemCount';
+import { ItemList } from './ItemList';
 
 //const cargarImagen = require.context("./imagenes", true);
 
-export const Item = ({item}) => {
-    const {title, price, imagen} = item;
+export const Item = ({items}) => {
+    const {title, price, imagen} = items;
     const[numeroProductos, setNumeroProductos] = useState(0); 
 
     const agregar = (producto)=>{
@@ -13,7 +14,7 @@ export const Item = ({item}) => {
     }
 
     return (
-        <div className='item' style={{margin: '10px', color: '#83B799'}}>
+        <div className='item' key={title} style={{margin: '10px', color: '#83B799'}}>
             <img src={imagen} alt ="" className='itemImg'/>
             <p>{title}</p>
             <p>{price}</p>

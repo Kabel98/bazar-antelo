@@ -5,9 +5,11 @@ import asyncGetData from "../helpers/help";
 import fotoAlfombra from '../imagenes/fotoAlfombra.jpg';
 import fotoEquipo from '../imagenes/fotoEquipo.webp';
 import fotoMaceta from '../imagenes/fotoMaceta.webp';
+import getFetch from "../helpers/help";
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 
-const Items = [
+/*const Items = [
     {
         id: 0,
         title: 'Alfombra',
@@ -26,12 +28,37 @@ const Items = [
         price: '$250',
         imagen: fotoMaceta
     }
-]
+]*/
 
 export const ItemList = () => {
     const [items,setItems] = useState([])
+    const [loading,setLoading] = useState(true)
 
-    const obtenerItems = ()=>{
+    useEffect(()=>{
+        getFetch.then(items => {
+            setItems(items)
+            setLoading(false)
+        })
+    },[])
+
+    return (
+        <>
+        <h1>Productos</h1>
+        {
+            loading ? <div class="fa-3x"><i class="fas fa-stroopwafel fa-spin"></i></div>
+            :
+
+            <div className='grid-product'>
+                {items.map(items => (
+                    <Item key = {items.title} items={items}/>
+                ))}
+            </div>
+        }
+        </>
+    )
+
+
+    /*const obtenerItems = ()=>{
         return new Promise((resolve, reject)=>{
             setTimeout(() => {
                 resolve(Items)
@@ -51,9 +78,9 @@ export const ItemList = () => {
             }
         }
         funcionAsincrona();
-    },[])
+    },[])*/
 
-    return(
+    /*return(
         <div className="listContainer">
             <p>Productos disponibles</p>
             <div className= 'itemContainer'>
@@ -66,5 +93,5 @@ export const ItemList = () => {
                 }
             </div>
         </div>
-    )
+    )*/
 }
