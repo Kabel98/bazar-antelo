@@ -7,9 +7,10 @@ import fotoEquipo from '../imagenes/fotoEquipo.webp';
 import fotoMaceta from '../imagenes/fotoMaceta.webp';
 import getFetch from "../helpers/help";
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import ItemListContainer from "./ItemListContainer.js";
 
 
-/*const Items = [
+const Items = [
     {
         id: 0,
         title: 'Alfombra',
@@ -28,10 +29,10 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
         price: '$250',
         imagen: fotoMaceta
     }
-]*/
+]
 
 export const ItemList = () => {
-    const [items,setItems] = useState([])
+    /*const [items,setItems] = useState([])
     const [loading,setLoading] = useState(true)
 
     useEffect(()=>{
@@ -55,7 +56,7 @@ export const ItemList = () => {
             </div>
         }
         </>
-    )
+    )*/
 
 
     /*const obtenerItems = ()=>{
