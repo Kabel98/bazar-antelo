@@ -1,32 +1,33 @@
 import React from "react";
-import { Contador } from "./ItemCount";
 import {useState, useEffect} from 'react';
 import { ItemList } from "./ItemList";
-import fotoAlfombra from '../imagenes/fotoAlfombra.jpg';
-import fotoEquipo from '../imagenes/fotoEquipo.webp';
-import fotoMaceta from '../imagenes/fotoMaceta.webp';
-import getFetch from "../helpers/help";
 import { Item } from "./Item";
+import {useParams} from "react-router-dom";
+import {Link} from 'react-router-dom';
 
-
-function ItemListContainer(props){
-    const greeting = props.greeting;
+function ItemListContainer(){
     const [items,setItems] = useState([])
     const [loading,setLoading] = useState(true)
-
+    const {category} = useParams();
+    
     useEffect(()=>{
-        getFetch.then(items => {
-            setItems(items)
-            setLoading(false)
+
+        ItemList.then(items => {
+            if(category === undefined){
+                setLoading(false)
+                setItems(items)
+            }
+            else{
+                const nuevaLista = items.filter(item=>item.category === category);
+                setItems(nuevaLista)
+            }
+            
+            
         })
-    },[])
+    },[category])
 
     return (
         <>
-        <div>
-            <p>{greeting}</p>
-            <ItemList productos={items}/>
-        </div>
         <h1>Productos</h1>
         {
             loading ? <div class="fa-3x"><i class="fas fa-stroopwafel fa-spin"></i></div>
@@ -34,16 +35,15 @@ function ItemListContainer(props){
 
             <div className='grid-product'>
                 {items.map(items => (
-                    <Item key = {items.title} items={items}/>
+                    <Link key={items.id} to={`/productos/${items.id}`}>
+                        <Item items={items}/>
+                    </Link>
                 ))}
             </div>
         }
         </>
     )
-   
-    
-         
-    
+
 }
 
 export default ItemListContainer;

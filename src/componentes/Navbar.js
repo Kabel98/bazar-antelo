@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import './Navbar.css';
 import Button from 'react-bootstrap/Button';
 import CartWidget from './CartWidget';
+import {NavLink, Link} from 'react-router-dom';
 
 
 function NavBar(){
@@ -11,19 +12,25 @@ function NavBar(){
         
         <div>
             <Navbar className= "navbar-principal">
+                
                 <Container>
-                    <Navbar.Brand href="#home" className="navbar-brand px-5" >Bazar Antelo</Navbar.Brand>
+                    <NavLink to ='/'>
+                        <Navbar.Brand href="#home" className="navbar-brand px-5" >Bazar Antelo</Navbar.Brand>
+                    </NavLink>
+
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="nav-link">
-                                <Nav.Link href="#hogar">Hogar</Nav.Link>
-                                <Nav.Link href="#tecnologia">Tecnologia</Nav.Link>
-                                <Nav.Link href="#novedades">Novedades</Nav.Link>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos">Productos</NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos/hogar">Hogar</NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos/tecnologia">Tecnologia</NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos/novedades">Novedades</NavLink>
                             </Nav>  
                         </Navbar.Collapse>
                         <Button href="#ingresar" variant="outline-success">Ingresar</Button>
                 </Container>
                 <a href="#cart" className='px-5'><CartWidget/></a>
-            </Navbar>
+                
+                </Navbar>
         </div>    
     )
         

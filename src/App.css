@@ -85,6 +85,9 @@
   background-color: #bb6a6a;
 }
 
+.grid-product{
+  background-color: #282c34;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -5,6 +5,9 @@ import asyncGetData from "../helpers/help";
 import fotoAlfombra from '../imagenes/fotoAlfombra.jpg';
 import fotoEquipo from '../imagenes/fotoEquipo.webp';
 import fotoMaceta from '../imagenes/fotoMaceta.webp';
+import fotoCuadro from '../imagenes/fotoCuadro.jpg';
+import fotoMantel from '../imagenes/fotoMantel.jpg';
+import fotoTaza from '../imagenes/fotoTaza.jpg';
 import getFetch from "../helpers/help";
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import ItemListContainer from "./ItemListContainer.js";
@@ -15,24 +18,59 @@ const Items = [
         id: 0,
         title: 'Alfombra',
         price: '$500',
-        imagen: fotoAlfombra
+        imagen: fotoAlfombra,
+        category: "hogar",
+        description: 'Alfombra moderna'
     },
     {
         id: 1,
         title: 'Equipo de musica',
         price: '$2000',
-        imagen: fotoEquipo
+        imagen: fotoEquipo,
+        category:"tecnologia",
+        description: 'Tocadiscos nuevo en estilo retro'
     },
     {
         id: 2,
         title: 'Maceta',
         price: '$250',
-        imagen: fotoMaceta
+        imagen: fotoMaceta,
+        category: "hogar",
+        description: 'Maceta blanca con detalle en madera'
+    },
+    {
+        id: 3,
+        title: 'Mantel',
+        price: '$100',
+        imagen: fotoMantel,
+        category: "hogar"
+    },
+    {
+        id: 4,
+        title: 'Cuadro',
+        price: '$400',
+        imagen: fotoCuadro,
+        category: "novedades"
+    },
+    {
+        id: 5,
+        title: 'Juego de tazas',
+        price: '$270',
+        imagen: fotoTaza,
+        category: "novedades"
     }
 ]
 
-export const ItemList = () => {
-    /*const [items,setItems] = useState([])
+export const ItemList = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(Items);
+        reject(err => console.log(err));
+    }, 2000);
+});
+    
+
+
+/*const [items,setItems] = useState([])
     const [loading,setLoading] = useState(true)
 
     useEffect(()=>{
@@ -95,4 +133,5 @@ export const ItemList = () => {
             </div>
         </div>
     )*/
-}
+
+ 

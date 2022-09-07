@@ -15,14 +15,14 @@
 float: left;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color:rgb(242, 228, 199);
+.navbar-light .navbar-nav .claseInactive {
+    color:rgb(247, 185, 124);
     font-weight: bold;
     float: center;
   }
 
-  .navbar-light .navbar-nav .nav-link.active {
-    color:rgb(247, 185, 124);
+  .navbar-light .navbar-nav .claseActive {
+    color:rgb(145, 177, 109);
     font-weight: bold;
     float: center;
   }
