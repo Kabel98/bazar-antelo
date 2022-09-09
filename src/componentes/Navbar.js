@@ -20,9 +20,9 @@ export const NavBar = () =>{
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="nav-link">
                                 <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos">Productos</NavLink>
-                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos/hogar">Hogar</NavLink>
-                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos/tecnologia">Tecnologia</NavLink>
-                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos/novedades">Novedades</NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/category/hogar">Hogar</NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/category/tecnologia">Tecnologia</NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/category/novedades">Novedades</NavLink>
                             </Nav>  
                         </Navbar.Collapse>
                         <Button href="#ingresar" variant="outline-success">Ingresar</Button>

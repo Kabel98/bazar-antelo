@@ -14,7 +14,7 @@ export const Item = ({item}) => {
 
     return (
         <div className='item' style={{margin: '10px', color: '#83B799'}}>
-            <Link to={`/item/${item.id}`}>
+            <Link to={`/Item/${item.id}`}>
             <img src={item.imagen} alt ="" className='itemImg'/>
                 </Link>
             <p>{item.title}</p>
