@@ -1,33 +1,33 @@
 import React from "react";
 import {ItemDetail} from './ItemDetail'
 import {useState, useEffect} from "react";
-import { ItemList } from "./ItemList";
+import { DatosProductos } from "./ProductData";
 import {useParams} from "react-router-dom";
-import { Item } from "./Item";
-function ItemDetailContainer () {
-    const [item, setItem] = useState({});
-    const {id} = useParams();
+
+export const ItemDetailContainer = ()=>{
+    const {ItemId} = useParams();
+    const [Item, setItem] = useState({});
+
+    const getItem = (id)=>{
+        return new Promise((resolve, reject)=>{
+            const item = DatosProductos.then(res => res.find(item=>item.id === parseInt(id)));
+            resolve(item)
+        })
+    }
 
     useEffect(()=>{
+        const getIt = async()=>{
+            const item = await getItem(ItemId);
+            setItem(item);
+        }
+        getIt();
+    },[ItemId])
 
-        ItemDetail.then(items => {
-            if(id === undefined){
-                setItem(items)
-            }
-            else{
-                const nuevaLista = items.filter(item=>item.id === id);
-                setItem(nuevaLista)
-            }
-            
-            
-        })
-    },[id])
-
+    console.log('item:', Item)
     return(
-        <div className="itemContainer">
-            {item.map(item => (
-                        <ItemDetail item={item} key={item.id}/>
-                ))}
+        <div className="item-detail-container">
+            <p style={{width:"100%", color: "white"}}>item detail container</p>
+            <ItemDetail item={Item}/>
         </div>
     )
 }

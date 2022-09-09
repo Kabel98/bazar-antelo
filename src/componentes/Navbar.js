@@ -7,12 +7,11 @@ import CartWidget from './CartWidget';
 import {NavLink, Link} from 'react-router-dom';
 
 
-function NavBar(){
+export const NavBar = () =>{
     return(
         
         <div>
             <Navbar className= "navbar-principal">
-                
                 <Container>
                     <NavLink to ='/'>
                         <Navbar.Brand href="#home" className="navbar-brand px-5" >Bazar Antelo</Navbar.Brand>
@@ -29,7 +28,6 @@ function NavBar(){
                         <Button href="#ingresar" variant="outline-success">Ingresar</Button>
                 </Container>
                 <a href="#cart" className='px-5'><CartWidget/></a>
-                
                 </Navbar>
         </div>    
     )
