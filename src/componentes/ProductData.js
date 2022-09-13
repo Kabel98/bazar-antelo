@@ -14,7 +14,8 @@ const Items = [
         price: '$500',
         imagen: fotoAlfombra,
         category: "hogar",
-        description: 'Alfombra moderna'
+        description: 'Alfombra moderna',
+        stock: 10
     },
     {
         id: 1,
@@ -22,7 +23,8 @@ const Items = [
         price: '$2000',
         imagen: fotoEquipo,
         category:"tecnologia",
-        description: 'Tocadiscos nuevo en estilo retro'
+        description: 'Tocadiscos nuevo en estilo retro',
+        stock: 20
     },
     {
         id: 2,
@@ -30,28 +32,32 @@ const Items = [
         price: '$250',
         imagen: fotoMaceta,
         category: "hogar",
-        description: 'Maceta blanca con detalle en madera'
+        description: 'Maceta blanca con detalle en madera',
+        stock: 50
     },
     {
         id: 3,
         title: 'Mantel',
         price: '$100',
         imagen: fotoMantel,
-        category: "hogar"
+        category: "hogar",
+        stock: 85
     },
     {
         id: 4,
         title: 'Cuadro',
         price: '$400',
         imagen: fotoCuadro,
-        category: "novedades"
+        category: "novedades",
+        stock: 60
     },
     {
         id: 5,
         title: 'Juego de tazas',
         price: '$270',
         imagen: fotoTaza,
-        category: "novedades"
+        category: "novedades",
+        stock: 70
     }
 ]
 

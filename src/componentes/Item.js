@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import { Contador } from './ItemCount';
 import { Link } from 'react-router-dom';
 
-//const cargarImagen = require.context("./imagenes", true);
-
 export const Item = ({item}) => {
     const[numeroProductos, setNumeroProductos] = useState(0); 
 
@@ -19,6 +17,7 @@ export const Item = ({item}) => {
                 </Link>
             <p>{item.title}</p>
             <p>{item.price}</p>
+            <p>{item.stock}</p>
             <Contador stock={6} inicial={1} onAdd={agregar}></Contador>
         </div>
     )

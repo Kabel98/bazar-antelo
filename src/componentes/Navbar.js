@@ -27,7 +27,7 @@ export const NavBar = () =>{
                         </Navbar.Collapse>
                         <Button href="#ingresar" variant="outline-success">Ingresar</Button>
                 </Container>
-                <a href="#cart" className='px-5'><CartWidget/></a>
+                <Link to='/cart' className='px-5'><CartWidget/></Link>
                 </Navbar>
         </div>    
     )
