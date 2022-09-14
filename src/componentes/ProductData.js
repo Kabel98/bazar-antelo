@@ -4,7 +4,6 @@ import fotoMaceta from '../imagenes/fotoMaceta.webp';
 import fotoCuadro from '../imagenes/fotoCuadro.jpg';
 import fotoMantel from '../imagenes/fotoMantel.jpg';
 import fotoTaza from '../imagenes/fotoTaza.jpg';
-//import '@fortawesome/fontawesome-svg-core/styles.css;
 
 
 const Items = [

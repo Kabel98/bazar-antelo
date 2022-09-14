@@ -26,7 +26,7 @@ export const ItemDetailContainer = ()=>{
     console.log('item:', Item)
     return(
         <div className="item-detail-container">
-            <p style={{width:"100%", color: "white"}}>item detail container</p>
+            <p style={{width:"100%", color: "white"}}>Producto seleccionado:</p>
             <ItemDetail item={Item}/>
         </div>
     )

@@ -1,9 +1,11 @@
 import './CartWidget.css';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import React from "react";
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 
 export const CartWidget = ()=>{
+    const {rol} = useContext(UserContext);
 return(
     <div className="fa-2x">
         <span className= "fa-layers fa-fw" > 
