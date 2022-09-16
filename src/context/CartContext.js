@@ -8,9 +8,16 @@ export const CartProvider= ({children}) =>{
     //const productCartList = DatosProductos;
     const[productCartList, setproductCartList] = useState([]);
 
-    const addProduct = (product) => {
+    const addProduct = (product,qty) => {
         const newList = [...productCartList,product];
+        if(isInCart(product.id)){
+            const productIndex = productCartList.findIndex(elm=>elm.id === product.id);
+            newList[productIndex].quantity = newList[productIndex].quantity + qty;
+        }else{
+            const newList = [...productCartList,product];
         setproductCartList(newList)
+        }
+        
     } 
 
     const deleteProduct = (idProduct) => {
@@ -19,8 +26,18 @@ export const CartProvider= ({children}) =>{
         setproductCartList(newArray);
     }
 
+    const clear = () => {
+        setproductCartList([])
+    }
+
+    const isInCart = (id)=>{
+        const elementExists = productCartList.some((elemento)=>elemento.id === id);
+        return elementExists;
+        
+    }
+
     return(
-            <CartContext.Provider value={{productCartList, addProduct, deleteProduct}}>
+            <CartContext.Provider value={{productCartList, addProduct, deleteProduct, clear}}>
                 {children}
             </CartContext.Provider>
     )
