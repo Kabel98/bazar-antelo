@@ -4,6 +4,7 @@ import {Item} from './Item';
 import { themeContext } from '../context/ThemeContext';
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 export const ItemDetail = ({item})=>{
     const{addProduct} = useContext(CartContext);
@@ -28,6 +29,12 @@ export const ItemDetail = ({item})=>{
                 <h5> $ {item.price}</h5>
             </div>
             <Contador stock={item.stock} inicial={1} onAdd={onAdd}></Contador>
+            {
+                quantity>0 &&
+                <Link to="/cart">
+                <button>Ir al carrito</button>
+                </Link>
+            }
         </div>
     )
 }
