@@ -8,10 +8,13 @@ export const Item = ({item}) => {
     const{addProduct} = useContext(CartContext);
 
    
+    const [quantity, setQuantity] = useState(0)
+
     const onAdd = (count) => {
         console.log("onAdd", count)
         const newProduct = {...item, quantity:count}
-        addProduct(newProduct)
+        addProduct(newProduct,count);
+        setQuantity(count);
     }
 
     return (

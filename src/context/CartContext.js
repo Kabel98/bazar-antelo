@@ -8,7 +8,7 @@ export const CartProvider= ({children}) =>{
     const[productCartList, setproductCartList] = useState([]);
 
     const addProduct = (product,qty) => {
-        const newList = [...productCartList,product];
+        const newList = [...productCartList];
 
         if(isInCart(product.id)){
             const productIndex = productCartList.findIndex(elm=>elm.id === product.id);

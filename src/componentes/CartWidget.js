@@ -11,19 +11,12 @@ export const CartWidget = ()=>{
 return(
     <div className="fa-2x">
         {
-            productCartList.lenght>0 ?
+            productCartList.length>0 &&
             <>
                 <span className= "fa-layers fa-fw" > 
                 <link to='/cart' rel="stylesheet" href="CartWidget.css"></link>
                 <i className="fas fa-shopping-cart" style={{color:"#83B799"}}></i>
                 <span className="fa-layers-counter" style={{background:"tomato", color:"white", fontSize:50}}>{getTotalProducts()}</span>
-                </span>
-            </>
-            :
-            <>
-                <span className= "fa-layers fa-fw" > 
-                <link to='/cart' rel="stylesheet" href="CartWidget.css"></link>
-                <i className="fas fa-shopping-cart" style={{color:"#83B799"}}></i>
                 </span>
             </>
         }

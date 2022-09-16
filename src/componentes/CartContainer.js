@@ -11,24 +11,21 @@ export const CartContainer = () => {
 
             <div>
                 {
-                    productCartList.lenght>0 
-                    
-                    ?
-
+                    productCartList.length>0 ?
                     <>
-                    {
-                        productCartList.map(item=>(
-                            <div>
-                                <img src = {item.imagen}/>
-                                <p>{item.title}</p>
-                                <p>${item.price}</p>
-                                <p>Cantidad seleccionada: {item.quantity}</p>
-                                {<p>Precio total: ${item.totalPrice}</p>}
-                                <button onClick={() => deleteProduct(item.id)}>Eliminar producto</button>
-                            </div>
-                        ))
-                    }
-                    <button onClick={clear}>Vaciar carro</button>
+                        {
+                            productCartList.map(item=>(
+                                <div>
+                                    <img src = {item.imagen}/>
+                                    <p>{item.title}</p>
+                                    <p>${item.price}</p>
+                                    <p>Cantidad seleccionada: {item.quantity}</p>
+                                    {<p>Precio total: ${item.totalPrice}</p>}
+                                    <button onClick={() => deleteProduct(item.id)}>Eliminar producto</button>
+                                </div>
+                            ))
+                        }
+                        <button onClick={clear}>Vaciar carro</button>
                     </>
                     :
                     <p>No se han agregado productos</p>

@@ -2,17 +2,19 @@ import './ItemDetail.css';
 import {Contador} from './ItemCount';
 import {Item} from './Item';
 import { themeContext } from '../context/ThemeContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 
 export const ItemDetail = ({item})=>{
     const{addProduct} = useContext(CartContext);
     const {texto} = useContext(themeContext);
+    const [quantity, setQuantity] = useState(0)
 
     const onAdd = (count) => {
         console.log("onAdd", count)
         const newProduct = {...item, quantity:count}
-        addProduct(newProduct)
+        addProduct(newProduct,count);
+        setQuantity(count);
     }
 
     return(
