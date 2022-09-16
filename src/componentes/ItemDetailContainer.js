@@ -7,6 +7,7 @@ import {useParams} from "react-router-dom";
 export const ItemDetailContainer = ()=>{
     const {ItemId} = useParams();
     const [Item, setItem] = useState({});
+    
 
     const getItem = (id)=>{
         return new Promise((resolve, reject)=>{

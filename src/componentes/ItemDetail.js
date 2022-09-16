@@ -23,7 +23,7 @@ export const ItemDetail = ({item})=>{
             </div>
             <div className='img-container'>
                 <h4>{item.title}</h4>
-                <h5>{item.price}</h5>
+                <h5> $ {item.price}</h5>
             </div>
             <Contador stock={item.stock} inicial={1} onAdd={onAdd}></Contador>
         </div>

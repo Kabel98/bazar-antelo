@@ -1,21 +1,26 @@
 import { createContext, useState } from "react";
-import { DatosProductos, ProductData } from "../componentes/ProductData";
-import { ItemList } from "../componentes/ItemList";
+
 
 export const CartContext = createContext();
 
 export const CartProvider= ({children}) =>{
-    //const productCartList = DatosProductos;
+
     const[productCartList, setproductCartList] = useState([]);
 
     const addProduct = (product,qty) => {
         const newList = [...productCartList,product];
+
         if(isInCart(product.id)){
             const productIndex = productCartList.findIndex(elm=>elm.id === product.id);
             newList[productIndex].quantity = newList[productIndex].quantity + qty;
+            newList[productIndex].totalPrice = newList[productIndex].quantity*newList[productIndex].price;
+            setproductCartList(newList)
+
         }else{
-            const newList = [...productCartList,product];
-        setproductCartList(newList)
+            const newProduct={...product, quantity:qty, totalPrice: qty*product.price}
+            const newList = [...productCartList];
+            newList.push(newProduct);
+            setproductCartList(newList);
         }
         
     } 
@@ -36,8 +41,13 @@ export const CartProvider= ({children}) =>{
         
     }
 
+    const getTotalProducts = () =>{
+        const totalProducts = productCartList.reduce((acc,item)=>acc + item.quantity,0)
+        return totalProducts;
+    }
+
     return(
-            <CartContext.Provider value={{productCartList, addProduct, deleteProduct, clear}}>
+            <CartContext.Provider value={{productCartList, addProduct, deleteProduct, clear, getTotalProducts, isInCart}}>
                 {children}
             </CartContext.Provider>
     )

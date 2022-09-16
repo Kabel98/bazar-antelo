@@ -1,13 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { Contador } from './ItemCount';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
 export const Item = ({item}) => {
     const[numeroProductos, setNumeroProductos] = useState(0); 
+    const{addProduct} = useContext(CartContext);
 
-    const agregar = (producto)=>{
-        console.log('funcion onAdd', producto)
-        setNumeroProductos(producto);
+   
+    const onAdd = (count) => {
+        console.log("onAdd", count)
+        const newProduct = {...item, quantity:count}
+        addProduct(newProduct)
     }
 
     return (
@@ -16,9 +20,9 @@ export const Item = ({item}) => {
             <img src={item.imagen} alt ="" className='itemImg'/>
                 </Link>
             <p>{item.title}</p>
-            <p>{item.price}</p>
+            <p>${item.price}</p>
             <p>{item.stock}</p>
-            <Contador stock={6} inicial={1} onAdd={agregar}></Contador>
+            <Contador stock={item.stock} inicial={1} onAdd={onAdd}></Contador>
         </div>
     )
 }
