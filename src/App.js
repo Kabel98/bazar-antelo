@@ -9,6 +9,7 @@ import { CartContainer} from './componentes/CartContainer';
 import {themeContext} from '../src/context/ThemeContext';
 import { UserContext } from './context/UserContext';
 import {CartProvider} from './context/CartContext';
+import { PagFirebase } from './componentes/PagFirebase';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
                 <Route path='/category/:category' element={<ItemListContainer/>}/>
                 <Route path='/cart' element={<CartContainer/>}/>
                 <Route path='/Item/:ItemId' element={<ItemDetailContainer/>}/>
+                <Route path ='/firebase' element={<PagFirebase/>}/>
               </Routes>
             </header>
           </themeContext.Provider>

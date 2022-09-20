@@ -40,6 +40,7 @@ const Items = [
         price: 100,
         imagen: fotoMantel,
         category: "hogar",
+        description: 'Mantel de algodon',
         stock: 85
     },
     {
@@ -48,6 +49,7 @@ const Items = [
         price: 400,
         imagen: fotoCuadro,
         category: "novedades",
+        description: 'Lamina con imagenes de botanica',
         stock: 60
     },
     {
@@ -56,6 +58,7 @@ const Items = [
         price: 270,
         imagen: fotoTaza,
         category: "novedades",
+        description: 'juego de 2 tazas de ceramica con sus respectivos platos',
         stock: 70
     }
 ]
