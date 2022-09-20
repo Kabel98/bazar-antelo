@@ -10,11 +10,11 @@ export const ItemDetailContainer = ()=>{
     
 
     const getItem = (id)=>{
-        return new Promise((resolve, reject)=>{
-            const item = DatosProductos.then(res => res.find(item=>item.id === parseInt(id)));
+         return new Promise((resolve, reject)=>{
+          const item = DatosProductos.then(res => res.find(item=>item.id === parseInt(id)));
             resolve(item)
         })
-    }
+     }
 
     useEffect(()=>{
         const getIt = async()=>{
