@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc, query, where } from "firebase/firestore";
 import {db} from "../utils/firebase"
 import { useState } from "react";
 
@@ -8,8 +8,8 @@ export const PagFirebase = () => {
 
     useEffect(() => {
         // const getData = async() =>{
-        //     const query = collection(db, "Items");
-        //     const response = await getDocs(query);
+        //     const queryRef = query(collection(db, "Items"), where("category", "==", "hogar"), limit(1));
+        //     const response = await getDocs(queryRef);
         //     const docs = response.docs;
         //     //console.log("docs info", docs[0].data());
         //     //console.log("docs id", docs[0].id);
@@ -17,6 +17,7 @@ export const PagFirebase = () => {
         //     setArregloProductos(data);
         // }
         // getData()
+
         const getDocumento = async() =>{
             const query = doc(db, "Items", "9eCVJJNQCJIXsTi1VwIC");
             const response = await getDoc(query);
