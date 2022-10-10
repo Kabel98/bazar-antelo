@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
-import { CartContext, CartProvider } from "../context/CartContext";
+import { CartContext } from "../context/CartContext";
 import { db } from "../utils/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { NavDropdown } from "react-bootstrap";
 
 export const BuyerForm = () => {
     const {getTotalPrice,productCartList} = useContext(CartContext);

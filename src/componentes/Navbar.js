@@ -16,13 +16,12 @@ export const NavBar = () =>{
                     <NavLink to ='/'>
                         <Navbar.Brand href="#home" className="navbar-brand px-5" >Bazar Antelo</Navbar.Brand>
                     </NavLink>
-
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="nav-link">
-                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos">Productos</NavLink>
-                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/category/hogar">Hogar</NavLink>
-                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/category/tecnologia">Tecnologia</NavLink>
-                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/category/novedades">Novedades</NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/productos">Productos </NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/category/hogar">Hogar </NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/category/tecnologia">Tecnologia </NavLink>
+                                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to="/category/novedades">Novedades </NavLink>
                             </Nav>  
                         </Navbar.Collapse>
                         <Button href="#ingresar" variant="outline-success">Ingresar</Button>

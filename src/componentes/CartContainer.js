@@ -1,25 +1,10 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import { CartProvider } from "../context/CartContext";
 import { BuyerForm } from "./BuyerForm";
 
 export const CartContainer = () => {
-    const{productCartList, deleteProduct, clear, totalPriceProducts, getTotalPrice} = useContext(CartContext);
+    const{productCartList, deleteProduct, clear, getTotalPrice} = useContext(CartContext);
 
-    
-    // const sendOrder = (e) =>{
-    //     e.preventDefault();
-    //     const order = {
-    //         buyer: { 
-    //             name: e.target[0].value, 
-    //             phone: e.target[1].value, 
-    //             email: e.target[2].value
-    //         },
-    //         items: productCartList,
-    //         total: getTotalPrice()
-    //     }
-
-    //}
     return(
         <div>
             <p>Carro</p>
