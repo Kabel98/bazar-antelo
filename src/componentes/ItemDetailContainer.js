@@ -1,28 +1,27 @@
 import React from "react";
 import {ItemDetail} from './ItemDetail'
 import {useState, useEffect} from "react";
-import { DatosProductos } from "./ProductData";
 import {useParams} from "react-router-dom";
+import { db } from "../utils/firebase";
+import {doc, getDoc} from "firebase/firestore";
 
 export const ItemDetailContainer = ()=>{
     const {ItemId} = useParams();
     const [Item, setItem] = useState({});
+
     
 
-    const getItem = (id)=>{
-         return new Promise((resolve, reject)=>{
-          const item = DatosProductos.then(res => res.find(item=>item.id === parseInt(id)));
-            resolve(item)
-        })
-     }
-
-    useEffect(()=>{
-        const getIt = async()=>{
-            const item = await getItem(ItemId);
-            setItem(item);
-        }
-        getIt();
-    },[ItemId])
+   useEffect(()=>{
+            const queryRef = doc(db, "items", ItemId);
+            getDoc(queryRef).then(response=>{
+                const newDoc= {
+                    ...response.data(),
+                    id:response.id
+                }
+            console.log(newDoc)
+            setItem(newDoc);
+        }).catch(error=>console.log(error));
+    },[ItemId]);
 
     console.log('item:', Item)
     return(

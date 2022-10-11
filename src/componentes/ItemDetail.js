@@ -1,18 +1,15 @@
 import './ItemDetail.css';
 import {Contador} from './ItemCount';
 import {Item} from './Item';
-import { themeContext } from '../context/ThemeContext';
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 export const ItemDetail = ({item})=>{
     const{addProduct} = useContext(CartContext);
-    const {texto} = useContext(themeContext);
     const [quantity, setQuantity] = useState(0)
 
     const onAdd = (count) => {
-        console.log("onAdd", count)
         const newProduct = {...item, quantity:count}
         addProduct(newProduct,count);
         setQuantity(count);
@@ -20,7 +17,7 @@ export const ItemDetail = ({item})=>{
 
     return(
         <div className='detail-container'>
-            <p style={{width: "100%"}}>{texto}</p>
+            <p style={{width: "100%"}}></p>
             <div className='img-container'>
                 <img src={item.imagen} />
             </div>
