@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { CartProvider } from "../context/CartContext";
 import { BuyerForm } from "./BuyerForm";
+import { db } from "../utils/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 export const CartContainer = () => {
-    const{productCartList, deleteProduct, clear, getTotalPrice} = useContext(CartContext);
-
+    const{productCartList, deleteProduct, clear, totalPriceProducts, getTotalPrice} = useContext(CartContext);
     return(
         <div>
             <p>Carro</p>

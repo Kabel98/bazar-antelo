@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { db } from "../utils/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { Alert } from "bootstrap";
 
 export const BuyerForm = () => {
-    const {getTotalPrice,productCartList} = useContext(CartContext);
+    const {getTotalPrice,productCartList, clear} = useContext(CartContext);
     const[idOrder, setIdOrder] = useState("");
 
     const sendOrder = (e) =>{
@@ -24,15 +25,18 @@ export const BuyerForm = () => {
         const queryRef = collection(db, "Orders");
         addDoc(queryRef, order).then(respuesta=>setIdOrder(respuesta.id))
         console.log(order)
-
     }
+    
+    
+    
 
     return(
         <form onSubmit={sendOrder}>
             <input type="text" placeholder="Nombre"/>
             <input type="text" placeholder="Teléfono"/>
             <input type="email" placeholder="Email"/>
-            <button type="submit" >Enviar Orden</button>
+            <button type="submit">Enviar Orden</button>
+            <p>Código de compra: {idOrder}</p>
         </form>
     )
 }

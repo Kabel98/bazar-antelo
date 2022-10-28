@@ -31,22 +31,24 @@ export const ItemListContainer = ()=>{
                     return newDoc;
                 })
                 setcategoryFilteredItemList(datos);
+
             } 
             catch (error) {
                 console.log(error);
             }
             
         }
-        getData();
+        getData()
+        .finally(() => setLoading(false))
     },[category])
 
     return (
         <>
         <h1>Productos</h1>
         {
-            //loading ? <div className="fa-3x"><i className="fas fa-stroopwafel fa-spin"></i></div>
-            //:
-            <ItemList items= {categoryFilteredItemList}/>
+            loading ? <div className="fa-3x"><i className="fas fa-stroopwafel fa-spin"></i></div>
+            :
+            <ItemList items= {categoryFilteredItemList} />
         }
         </>
     )

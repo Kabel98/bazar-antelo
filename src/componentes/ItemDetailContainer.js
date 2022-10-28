@@ -12,7 +12,7 @@ export const ItemDetailContainer = ()=>{
     
 
    useEffect(()=>{
-            const queryRef = doc(db, "items", ItemId);
+            const queryRef = doc(db, "Items", ItemId);
             getDoc(queryRef).then(response=>{
                 const newDoc= {
                     ...response.data(),
